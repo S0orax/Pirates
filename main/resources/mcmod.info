@@ -1,0 +1,16 @@
+[
+{
+  "modid": "pirates",
+  "name": "Pirate's",
+  "description": "Le célèbre mod Pirates des cuboïdes",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Sorax", "L'équipe Minecraft Hardcore"],
+  "credits": "Les gars de chez Forge, MCP, et Mojang, bigup à Iplay",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
