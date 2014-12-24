@@ -1,5 +1,7 @@
 package net.sorax.pirates.client;
 
-public class ClientProxy {
+import net.sorax.pirates.common.CommonProxy;
+
+public class ClientProxy extends CommonProxy {
 	
 }
