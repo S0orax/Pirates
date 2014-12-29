@@ -30,7 +30,7 @@ public class Pirates {
 	
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
-		ItemPirates.preInit();		
+		ItemPirates.load();		
 	}
 	
 	@EventHandler

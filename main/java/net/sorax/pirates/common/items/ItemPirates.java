@@ -3,7 +3,10 @@ package net.sorax.pirates.common.items;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ItemPirates {
@@ -33,7 +36,7 @@ public class ItemPirates {
 	public static Item rhum = new Item().setUnlocalizedName("rhum").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item voile = new Item().setUnlocalizedName("voile").setCreativeTab(CreativeTabs.tabMisc);	
 	
-	public static void preInit() {
+	public static void load() {
 		registerItem(barbe, "barbe");
 		registerItem(boulet, "boulet");
 		registerItem(cacheoeil, "cacheoeil");
@@ -58,10 +61,47 @@ public class ItemPirates {
 		registerItem(proue, "proue");
 		registerItem(rhum, "rhum");
 		registerItem(voile, "voile");
+		
+		recipe();
 	}
 	
 	private static void registerItem(Item item, String texture) {
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation("pirates:" + texture, "inventory"));;
 		GameRegistry.registerItem(item, texture);
+	}
+	
+	private static void recipe() {
+		// Minecraft ItemStack
+		ItemStack iron = new ItemStack(Items.iron_ingot);
+		ItemStack coal = new ItemStack(Items.coal);
+		ItemStack gunPowder = new ItemStack(Items.gunpowder);
+		ItemStack planks = new ItemStack(Blocks.planks);
+		ItemStack stick = new ItemStack(Items.stick);
+		ItemStack leather = new ItemStack(Items.leather);
+		ItemStack string = new ItemStack(Items.string);
+		ItemStack bone = new ItemStack(Items.bone);
+		ItemStack pumpkin = new ItemStack(Blocks.pumpkin);
+		ItemStack boat = new ItemStack(Items.boat);
+		ItemStack chest = new ItemStack(Blocks.chest);
+		
+		// Pirates ItemStack
+		ItemStack fonteStack = new ItemStack(fonte);
+		ItemStack matStack = new ItemStack(mat);
+		ItemStack voileStack = new ItemStack(voile);
+		ItemStack gouvernailStack = new ItemStack(gouvernail);
+		ItemStack proueStack = new ItemStack(proue);
+		
+		//Crafting Recipe
+		GameRegistry.addRecipe(new ItemStack(fonte, 32), "xyx", "yxy", "xyx", 'x', coal, 'y', iron);
+		GameRegistry.addRecipe(new ItemStack(canon, 1), "xxx", "xyy", "xxx", 'x', fonteStack, 'y', gunPowder);
+		GameRegistry.addRecipe(new ItemStack(boulet, 4), " x ", "x x", " x ", 'x', fonteStack);
+		GameRegistry.addRecipe(new ItemStack(mat, 1), " x ", "yxy", " x ", 'x', planks, 'y', stick);
+		GameRegistry.addRecipe(new ItemStack(voile, 1), "xxx", "xxx", "y y", 'x', leather, 'y', string);
+		GameRegistry.addRecipe(new ItemStack(gouvernail, 1), " x ", "xyx", " x ", 'x', stick, 'y', iron);
+		GameRegistry.addRecipe(new ItemStack(proue, 1),  "x x", " y ", "x x", 'x', bone, 'y', pumpkin);
+		GameRegistry.addRecipe(new ItemStack(corsaire, 1), " az", "ert", " y ", 'a', matStack, 'z', voileStack, 
+														'e', gouvernailStack, 'r', chest, 't', proueStack,
+														'y', boat);
+		
 	}
 }
