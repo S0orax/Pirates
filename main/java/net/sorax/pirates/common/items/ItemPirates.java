@@ -18,7 +18,7 @@ public class ItemPirates {
 	public static Item canon = new ItemCanon().setUnlocalizedName("canon").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item cd = new Item().setUnlocalizedName("cd").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item corsaire = new Item().setUnlocalizedName("corsaire").setCreativeTab(CreativeTabs.tabMisc);
-	public static Item couteau = new Item().setUnlocalizedName("couteau").setCreativeTab(CreativeTabs.tabMisc);
+	public static Item couteau = new ItemKnife().setUnlocalizedName("couteau").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item diamondhull = new Item().setUnlocalizedName("diamondhull").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item ecaillesirene = new Item().setUnlocalizedName("ecaillesirene").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item ectoplasme = new Item().setUnlocalizedName("ectoplasme").setCreativeTab(CreativeTabs.tabMisc);

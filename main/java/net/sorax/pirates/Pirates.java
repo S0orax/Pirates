@@ -7,7 +7,10 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.sorax.pirates.common.CommonProxy;
+import net.sorax.pirates.common.entities.EntityBoulet;
+import net.sorax.pirates.common.entities.EntityKnife;
 import net.sorax.pirates.common.items.ItemPirates;
 
 @Mod(modid = Pirates.MODID, name = "Pirate's", version = Pirates.VERSION)
@@ -30,7 +33,10 @@ public class Pirates {
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
 		proxy.registerRenderers();
-		ItemPirates.load();		
+		ItemPirates.load();
+		
+		EntityRegistry.registerModEntity(EntityBoulet.class, "EntityBoulet", 2, instance, 160, 1, false);
+		EntityRegistry.registerModEntity(EntityKnife.class, "EntityKnife", 3, instance, 160, 1, false);
 	}
 	
 	@EventHandler

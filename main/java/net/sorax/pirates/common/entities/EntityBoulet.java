@@ -22,8 +22,9 @@ public class EntityBoulet extends EntityThrowable{
 
 	@Override
 	protected void onImpact(MovingObjectPosition mop) {
+		worldObj.createExplosion(this, this.posX, this.posY, this.posZ, 3, true);
+
 		if(!worldObj.isRemote) {
-			worldObj.createExplosion(this, this.posX, this.posY, this.posZ, 3, true);
 			this.setDead();
 		}
 	}
