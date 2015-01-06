@@ -1,4 +1,5 @@
 {
 	"canon": {"category":"player", "sounds":["canon"]},
-	"knife": {"category":"player", "sounds":["knife"]}
+	"knife": {"category":"player", "sounds":["knife"]},
+	"fusil": {"category":"player", "sounds":["fusil"]}
 }

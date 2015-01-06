@@ -6,26 +6,26 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-public class EntityKnife extends EntityThrowable{
+public class EntityFusilBullet extends EntityThrowable{
 
-	public EntityKnife(World world) {
+	public EntityFusilBullet(World world) {
 		super(world);
 	}
 	
-	public EntityKnife(World world, EntityLivingBase entity) {
+	public EntityFusilBullet(World world, EntityLivingBase entity) {
 		super(world, entity);
 	}
 	
-	public EntityKnife(World world, double x, double y, double z) {
+	public EntityFusilBullet(World world, double x, double y, double z) {
 		super(world, x, y, z);
 	}
 
 	@Override
 	protected void onImpact(MovingObjectPosition mop) {
-		if (mop.entityHit != null) {
-			mop.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 3f);
+		if(mop.entityHit != null) {
+			mop.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 10f);
 		}
-
+		
 		if(!this.worldObj.isRemote) {
 			this.setDead();
 		}

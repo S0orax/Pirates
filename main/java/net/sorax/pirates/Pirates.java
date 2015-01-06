@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.sorax.pirates.common.CommonProxy;
 import net.sorax.pirates.common.entities.EntityBoulet;
+import net.sorax.pirates.common.entities.EntityFusilBullet;
 import net.sorax.pirates.common.entities.EntityKnife;
 import net.sorax.pirates.common.items.ItemPirates;
 
@@ -37,6 +38,7 @@ public class Pirates {
 		
 		EntityRegistry.registerModEntity(EntityBoulet.class, "EntityBoulet", 2, instance, 160, 1, false);
 		EntityRegistry.registerModEntity(EntityKnife.class, "EntityKnife", 3, instance, 160, 1, false);
+		EntityRegistry.registerModEntity(EntityFusilBullet.class, "EntityFusilBullet", 4, instance, 160, 1, false);
 	}
 	
 	@EventHandler

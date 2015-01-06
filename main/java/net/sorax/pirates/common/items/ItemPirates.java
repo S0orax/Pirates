@@ -23,7 +23,7 @@ public class ItemPirates {
 	public static Item ecaillesirene = new Item().setUnlocalizedName("ecaillesirene").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item ectoplasme = new Item().setUnlocalizedName("ectoplasme").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item fonte = new Item().setUnlocalizedName("fonte").setCreativeTab(CreativeTabs.tabMisc);
-	public static Item fusil = new Item().setUnlocalizedName("fusil").setCreativeTab(CreativeTabs.tabMisc);
+	public static Item fusil = new ItemFusil().setUnlocalizedName("fusil").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item gouvernail = new Item().setUnlocalizedName("gouvernail").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item ironhull = new Item().setUnlocalizedName("ironhull").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item jambedebois = new Item().setUnlocalizedName("jambedebois").setCreativeTab(CreativeTabs.tabMisc);
