@@ -2,7 +2,7 @@ package net.sorax.pirates.common;
 
 public class CommonProxy {
 	
-	public void load() {
+	public void registerRenderers() {
 		
 	}
 }

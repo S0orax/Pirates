@@ -15,7 +15,7 @@ public class ItemPirates {
 	public static Item boulet = new Item().setUnlocalizedName("boulet").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item cacheoeil = new Item().setUnlocalizedName("cacheoeil").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item cadenas = new Item().setUnlocalizedName("cadenas").setCreativeTab(CreativeTabs.tabMisc);
-	public static Item canon = new Item().setUnlocalizedName("canon").setCreativeTab(CreativeTabs.tabMisc);
+	public static Item canon = new ItemCanon().setUnlocalizedName("canon").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item cd = new Item().setUnlocalizedName("cd").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item corsaire = new Item().setUnlocalizedName("corsaire").setCreativeTab(CreativeTabs.tabMisc);
 	public static Item couteau = new Item().setUnlocalizedName("couteau").setCreativeTab(CreativeTabs.tabMisc);

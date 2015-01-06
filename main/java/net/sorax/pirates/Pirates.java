@@ -25,11 +25,11 @@ public class Pirates {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
-		proxy.load();
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
+		proxy.registerRenderers();
 		ItemPirates.load();		
 	}
 	
