@@ -34,11 +34,7 @@ public class Pirates {
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
 		proxy.registerRenderers();
-		ItemPirates.load();
-		
-		EntityRegistry.registerModEntity(EntityBoulet.class, "EntityBoulet", 2, instance, 160, 1, false);
-		EntityRegistry.registerModEntity(EntityKnife.class, "EntityKnife", 3, instance, 160, 1, false);
-		EntityRegistry.registerModEntity(EntityFusilBullet.class, "EntityFusilBullet", 4, instance, 160, 1, false);
+		ItemPirates.load();		
 	}
 	
 	@EventHandler

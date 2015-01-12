@@ -17,18 +17,14 @@ public class ItemFusil extends Item {
 		
 		public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn) {
 			if(playerIn.capabilities.isCreativeMode || playerIn.inventory.hasItem(ItemPirates.munition)) {
-				
+								
 				worldIn.playSoundAtEntity(playerIn, "pirates:fusil", 1.0f, 1.0f);
-				
+					
 				Random rand = new Random();
-				
 				for(int i = 0; i < 16; i++) {
 					worldIn.spawnParticle(EnumParticleTypes.SMOKE_LARGE, playerIn.posX + rand.nextDouble() - 0.5D, playerIn.posY + 0.75D + rand.nextDouble(), playerIn.posZ + rand.nextDouble() - 0.5D, 0.0D, 0.0D, 0.0D, new int[0]);
 				}
-				
-				if(!worldIn.isRemote) {
-					worldIn.spawnEntityInWorld(new EntityFusilBullet(worldIn, playerIn));
-				}
+				worldIn.spawnEntityInWorld(new EntityFusilBullet(worldIn, playerIn));
 				
 				playerIn.inventory.consumeInventoryItem(ItemPirates.munition);
 			}
