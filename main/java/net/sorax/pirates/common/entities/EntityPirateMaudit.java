@@ -12,6 +12,7 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -25,7 +26,7 @@ import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.sorax.pirates.common.items.ItemPirates;
 
-public class EntityPirateMaudit extends EntityMob{
+public class EntityPirateMaudit extends EntityMob {
 	
 	public EntityPirateMaudit(World world) {
 		super(world);
@@ -39,6 +40,7 @@ public class EntityPirateMaudit extends EntityMob{
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(8, new EntityAILookIdle(this));
         this.applyEntityAI();
+        this.setCurrentItemOrArmor(0, new ItemStack(Items.iron_sword));
 	}
 	
 	protected void applyEntityAI()
@@ -108,27 +110,26 @@ public class EntityPirateMaudit extends EntityMob{
 		return Items.iron_ingot;
 	}
 	
+	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_)
+    {
+        int j = this.rand.nextInt(2) + this.rand.nextInt(1 + p_70628_2_);
+        int k;
+
+        for (k = 0; k < j; ++k)
+        {
+            this.dropItem(ItemPirates.medaillon, 1);
+        }
+
+        j = this.rand.nextInt(3) + this.rand.nextInt(1 + p_70628_2_);
+
+        for (k = 0; k < j; ++k)
+        {
+            this.dropItem(Items.iron_ingot, 1);
+        }
+    }
+	
 	protected int getExperiencePoints(EntityPlayer player) {
 		return super.getExperiencePoints(player);
-	}
-	
-	protected void func_180481_a(DifficultyInstance p_180481_1_) {
-		super.func_180481_a(p_180481_1_);
-		
-		if (this.rand.nextFloat() < (this.worldObj.getDifficulty() == EnumDifficulty.HARD ? 0.05F : 0.01F)) {
-            int i = this.rand.nextInt(3);
-
-            if (i == 0)
-            {
-                this.setCurrentItemOrArmor(0, new ItemStack(Items.iron_sword));
-            }
-            else
-            {
-                this.setCurrentItemOrArmor(0, new ItemStack(ItemPirates.medaillon));
-            }
-        }
-		
-		this.setCurrentItemOrArmor(0, new ItemStack(Items.iron_sword));
 	}
 	
 	public boolean isInMoon() {
