@@ -28,5 +28,6 @@ public class PirateEntity {
 	
 	private static void registerOther(Class<? extends Entity> clazz, String name) {
 		EntityRegistry.registerGlobalEntityID(clazz, name, EntityRegistry.findGlobalUniqueEntityId());
+		EntityRegistry.registerModEntity(clazz, name, EntityRegistry.findGlobalUniqueEntityId(), Pirates.instance, 64, 1, true);
 	}
 }

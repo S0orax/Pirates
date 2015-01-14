@@ -20,7 +20,8 @@ public class ItemKnife extends Item {
 		
 		worldIn.playSoundAtEntity(playerIn, "pirates:knife", 1.0f, 1.0f);
 		
-		worldIn.spawnEntityInWorld(new EntityKnife(worldIn, playerIn));
+		if(!worldIn.isRemote)
+			worldIn.spawnEntityInWorld(new EntityKnife(worldIn, playerIn));
 		
 		return itemStackIn;
 	}
