@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.sorax.pirates.common.entities.EntityBoulet;
+import net.sorax.pirates.common.entities.EntityCapitain;
 import net.sorax.pirates.common.entities.EntityFusilBullet;
 import net.sorax.pirates.common.entities.EntityKnife;
 import net.sorax.pirates.common.entities.EntityLanceur;
@@ -14,6 +15,7 @@ public class PirateEntity {
 	public static void loadCreature() {
 		registerMob(EntityPirateMaudit.class, "EntityPirateMaudit", 0, 0xFF0000);
 		registerMob(EntityLanceur.class, "Lanceur", 0xFF9999, 0x553333);
+		registerMob(EntityCapitain.class, "Capitaine", 0x4D4433, 0xD6AA85);
 	}
 	
 	public static void loadOthers() {
