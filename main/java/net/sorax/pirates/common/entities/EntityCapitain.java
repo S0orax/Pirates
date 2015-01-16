@@ -44,9 +44,10 @@ public class EntityCapitain extends EntityMob {
 	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(35.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(35.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(3.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.3D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(6.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.2D);
 	}
 	
 	protected String getLivingSound()

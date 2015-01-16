@@ -1,6 +1,8 @@
 package net.sorax.pirates;
 
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Blocks;
+import net.minecraft.tileentity.MobSpawnerBaseLogic;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -29,7 +31,7 @@ public class Pirates {
 	@Instance(MODID)
 	public static Pirates instance;
 	
-	@SidedProxy(clientSide = "net.sorax.pirates.client.ClientProxy", serverSide = "net.sorax.pirates.common.ServerProxy")
+	@SidedProxy(clientSide = "net.sorax.pirates.client.ClientProxy", serverSide = "net.sorax.pirates.common.CommonProxy")
 	public static CommonProxy proxy;
 	
 	@EventHandler

@@ -1,3 +1,7 @@
+entity.PirateMaudit.name=Pirate Maudit
+entity.Lanceur.name=Lanceur de couteaux
+entity.Capitaine.name=Capitaine
+
 item.barbe.name=Barbe
 item.boulet.name=Boulet
 item.cacheoeil.name=Cache Oeil
