@@ -1,0 +1,8 @@
+{
+	"canon": {"category":"player", "sounds":["pirates:canon"]},
+	"knife": {"category":"player", "sounds":["pirates:knife"]},
+	"fusil": {"category":"player", "sounds":["pirates:fusil"]},
+	"mob.pirate.ambiant": {"category":"master", "sounds":["pirates:mob/pirate/ambiant1","pirates:mob/pirate/ambiant2","pirates:mob/pirate/ambiant3"]},
+	"mob.pirate.hurt": {"category":"master", "sounds":["pirates:mob/pirate/hurt"]},
+	"mob.pirate.death": {"category":"master", "sounds":["pirates:mob/pirate/death"]}
+}

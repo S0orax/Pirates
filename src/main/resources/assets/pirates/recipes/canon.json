@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+  	"pattern": [
+    	"xxx",
+    	"xyy",
+    	"xxx"  ],
+  	"key": {
+    	"x": [
+      	{
+        	"item": "minecraft:coal",
+        	"data": 0
+      	}
+    	],
+    	"y": [{"item": "minecraft:gunpowder", "data": 0}]
+  	},
+  	"result": {
+    	"item": "pirates:fonte",
+    	"data": 0
+  	}
+}

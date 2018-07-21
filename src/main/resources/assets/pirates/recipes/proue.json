@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+  	"pattern": [
+    	"x x",
+    	" y ",
+    	"x x"  ],
+  	"key": {
+    	"x": [
+      	{
+        	"item": "minecraft:bone",
+        	"data": 0
+      	}
+    	],
+    	"y": [{"item": "minecraft:pumpkin", "data": 0}]
+  	},
+  	"result": {
+    	"item": "pirates:proue",
+    	"data": 0
+  	}
+}

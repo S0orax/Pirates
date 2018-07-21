@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shaped",
+  	"pattern": [
+    	"xyx",
+    	"yxy",
+    	"xyx"  ],
+  	"key": {
+    	"x": [
+      	{
+        	"item": "minecraft:coal",
+        	"data": 0
+      	}
+    	],
+    	"y": [{"item": "minecraft:iron_ingot", "data": 0}]
+  	},
+  	"result": {
+    	"item": "pirates:fonte",
+		"data": 0,
+		"count": 32
+  	}
+}

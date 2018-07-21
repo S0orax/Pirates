@@ -1,0 +1,24 @@
+{
+	"type": "minecraft:crafting_shaped",
+  	"pattern": [
+    	" az",
+    	"ert",
+    	" y "  ],
+  	"key": {
+    	"a": [
+      	{
+        	"item": "pirates:mat",
+        	"data": 0
+      	}
+    	],
+        "z": [{"item": "pirates:voile", "data": 0}],
+        "e": [{"item": "pirates:gouvernail", "data": 0}],
+        "r": [{"item": "pirates:chest", "data": 0}],
+        "t": [{"item": "pirates:proue", "data": 0}],
+        "y": [{"item": "minecraft:boat", "data": 0}]
+  	},
+  	"result": {
+    	"item": "pirates:mat",
+    	"data": 0
+  	}
+}

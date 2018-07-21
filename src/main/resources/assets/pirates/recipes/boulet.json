@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+  	"pattern": [
+    	" x ",
+    	"x x",
+    	" x "  ],
+  	"key": {
+    	"x": [
+      	{
+        	"item": "pirates:fonte",
+        	"data": 0
+      	}
+    	]
+  	},
+  	"result": {
+    	"item": "pirates:boulet",
+    	"data": 0
+  	}
+}
