@@ -3,12 +3,10 @@ package com.sorax.pirates;
 import com.sorax.pirates.common.CommonProxy;
 import com.sorax.pirates.common.entities.EntityLanceur;
 import com.sorax.pirates.common.entities.EntityPirateMaudit;
-import com.sorax.pirates.common.items.ItemPirates;
 
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.Biome;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -34,11 +32,11 @@ public class Pirates {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
+		
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
-		MinecraftForge.EVENT_BUS.register(new ItemPirates());
 		PirateEntity.loadOthers();
 		PirateEntity.loadCreature();
 		
