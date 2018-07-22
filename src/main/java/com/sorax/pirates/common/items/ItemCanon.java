@@ -34,13 +34,16 @@ public class ItemCanon extends Item{
 		ItemStack ammo = this.findAmmo(playerIn);
 		boolean hasAmmo = !ammo.isEmpty();
 		
-		if(playerIn.capabilities.isCreativeMode || !hasAmmo) {
+		if(!playerIn.capabilities.isCreativeMode && !hasAmmo) {
 			return hasAmmo ? new ActionResult<ItemStack>(EnumActionResult.PASS, itemStackIn) : new ActionResult<ItemStack>(EnumActionResult.FAIL, itemStackIn);
 		} else {
 			worldIn.playSound(playerIn, playerIn.posX, playerIn.posY, playerIn.posZ, PirateSounds.CANON, SoundCategory.NEUTRAL, 1.0f, 1.0f);
 			ammo.shrink(1);
 			EntityBoulet boulet = new EntityBoulet(worldIn, playerIn);
+			boulet.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
 			worldIn.spawnEntity(boulet);
+			
+			playerIn.setActiveHand(handIn);
 			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
 		}
 		

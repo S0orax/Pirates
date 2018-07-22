@@ -24,6 +24,7 @@ public class EntityBoulet extends EntityThrowable{
 		this.world.createExplosion(this, this.posX, this.posY, this.posZ, 3, true);
 		
 		if(!this.world.isRemote) {
+			this.world.setEntityState(this, (byte)3);
 			this.setDead();
 		}
 	}

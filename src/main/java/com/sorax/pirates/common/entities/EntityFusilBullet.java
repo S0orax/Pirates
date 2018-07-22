@@ -27,6 +27,7 @@ public class EntityFusilBullet extends EntityThrowable{
 		}
 		
 		if(!this.world.isRemote) {
+			this.world.setEntityState(this, (byte)3);
 			this.setDead();
 		}
 	}

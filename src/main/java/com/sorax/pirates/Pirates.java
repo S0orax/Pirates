@@ -37,8 +37,7 @@ public class Pirates {
 	
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
-		PirateEntity.loadOthers();
-		PirateEntity.loadCreature();
+		PirateEntity.initEggs();
 		
 		Biome[] biomes = {
 			Biomes.BEACH, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.DESERT, 

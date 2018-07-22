@@ -47,7 +47,10 @@ public class ItemFusil extends Item {
         				playerIn.posY + 0.75D + rand.nextDouble(), playerIn.posZ + rand.nextDouble() - 0.5D, 0.0D, 0.0D,
         				0.0D, new int[0]);
         	}
-        	worldIn.spawnEntity(new EntityFusilBullet(worldIn, playerIn));
+        	
+        	EntityFusilBullet entity = new EntityFusilBullet(worldIn, playerIn);
+        	entity.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+        	worldIn.spawnEntity(entity);
         	
         	ammo.shrink(1);
         	playerIn.setActiveHand(handIn);
