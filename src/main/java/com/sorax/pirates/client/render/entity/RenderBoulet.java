@@ -1,5 +1,7 @@
 package com.sorax.pirates.client.render.entity;
 
+import com.sorax.pirates.common.entities.EntityBoulet;
+
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
@@ -11,7 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderBoulet extends Render{
+public class RenderBoulet extends Render<EntityBoulet>{
 
 	protected final Item item;
     private final RenderItem renderItem;
@@ -23,7 +25,7 @@ public class RenderBoulet extends Render{
         this.renderItem = renderItem;
     }
 
-    public void doRender(Entity entity, double x, double y, double z, float entityYaw, float partialTicks)
+    public void doRender(EntityBoulet entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
         GlStateManager.pushMatrix();
         GlStateManager.translate((float)x, (float)y, (float)z);
@@ -43,7 +45,7 @@ public class RenderBoulet extends Render{
         return new ItemStack(this.item, 1, 0);
     }
 
-    protected ResourceLocation getEntityTexture(Entity entity)
+    protected ResourceLocation getEntityTexture(EntityBoulet entity)
     {
         return TextureMap.LOCATION_BLOCKS_TEXTURE;
     }

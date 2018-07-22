@@ -32,15 +32,13 @@ public class Pirates {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
-		
+		proxy.registerRenderers();
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
 		PirateEntity.loadOthers();
 		PirateEntity.loadCreature();
-		
-		proxy.registerRenderers();
 		
 		Biome[] biomes = {
 			Biomes.BEACH, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.DESERT, 

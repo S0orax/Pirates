@@ -19,31 +19,21 @@ import com.sorax.pirates.common.items.ItemPirates;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
-import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.Entity;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ClientProxy extends CommonProxy {
 	
+	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerRenderers() {
-		RenderingRegistry.registerEntityRenderingHandler(EntityBoulet.class, this.<EntityBoulet>createRenderer(new RenderBoulet(Minecraft.getMinecraft().getRenderManager(), ItemPirates.boulet, Minecraft.getMinecraft().getRenderItem())));
-		RenderingRegistry.registerEntityRenderingHandler(EntityKnife.class, this.<EntityKnife>createRenderer(new RenderKnife(Minecraft.getMinecraft().getRenderManager(), ItemPirates.couteau, Minecraft.getMinecraft().getRenderItem())));
-		RenderingRegistry.registerEntityRenderingHandler(EntityFusilBullet.class, this.<EntityFusilBullet>createRenderer(new RenderFusilBullet(Minecraft.getMinecraft().getRenderManager(), ItemPirates.munition, Minecraft.getMinecraft().getRenderItem())));
-		RenderingRegistry.registerEntityRenderingHandler(EntityPirateMaudit.class, this.<EntityPirateMaudit>createRenderer(new RenderPirateMaudit(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0.5f)));
-		RenderingRegistry.registerEntityRenderingHandler(EntityLanceur.class, this.<EntityLanceur>createRenderer(new RenderLanceur(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0.5f)));
-		RenderingRegistry.registerEntityRenderingHandler(EntityCapitain.class, this.<EntityCapitain>createRenderer(new RenderCapitain(0.5f, 2.0f)));
-		RenderingRegistry.registerEntityRenderingHandler(EntityPirateGhost.class, this.<EntityPirateGhost>createRenderer(new RenderPirateGhost(0.0f)));
-	}
-	
-	private <T extends Entity> IRenderFactory<? super T> createRenderer(Render<T> render) {
-		return new IRenderFactory<T>() {
-			@Override
-			public Render<T> createRenderFor(RenderManager manager) {
-				return render;
-			}
-		};
+		RenderingRegistry.registerEntityRenderingHandler(EntityBoulet.class, renderManager -> new RenderBoulet(renderManager, ItemPirates.boulet, Minecraft.getMinecraft().getRenderItem()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityKnife.class, renderManager -> new RenderKnife(renderManager, ItemPirates.couteau, Minecraft.getMinecraft().getRenderItem()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityFusilBullet.class, renderManager -> new RenderFusilBullet(renderManager, ItemPirates.munition, Minecraft.getMinecraft().getRenderItem()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityPirateMaudit.class, renderManager -> new RenderPirateMaudit(renderManager, new ModelBiped(), 0.5f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityLanceur.class, renderManager -> new RenderLanceur(renderManager, new ModelBiped(), 0.5f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityCapitain.class, renderManager -> new RenderCapitain(renderManager, 0.5f, 2.0f));
+		RenderingRegistry.registerEntityRenderingHandler(EntityPirateGhost.class, renderManager -> new RenderPirateGhost(renderManager, 0.0f));
 	}
 }

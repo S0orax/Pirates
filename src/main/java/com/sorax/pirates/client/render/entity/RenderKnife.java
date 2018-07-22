@@ -1,5 +1,7 @@
 package com.sorax.pirates.client.render.entity;
 
+import com.sorax.pirates.common.entities.EntityKnife;
+
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
@@ -14,7 +16,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderKnife extends Render{
+public class RenderKnife extends Render<EntityKnife>{
 
 	protected final Item item;
     private final RenderItem renderItem;
@@ -26,7 +28,7 @@ public class RenderKnife extends Render{
         this.renderItem = renderItem;
     }
 
-    public void doRender(Entity entity, double x, double y, double z, float entityYaw, float partialTicks)
+    public void doRender(EntityKnife entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
         GlStateManager.pushMatrix();
         GlStateManager.translate((float)x, (float)y, (float)z);
@@ -46,7 +48,7 @@ public class RenderKnife extends Render{
         return new ItemStack(this.item, 1, 0);
     }
 
-    protected ResourceLocation getEntityTexture(Entity entity)
+    protected ResourceLocation getEntityTexture(EntityKnife entity)
     {
         return TextureMap.LOCATION_BLOCKS_TEXTURE;
     }
