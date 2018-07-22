@@ -28,8 +28,11 @@ public class ItemKnife extends Item {
 		
 		worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, PirateSounds.KNIFE, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 		
-		if(!worldIn.isRemote)
-			worldIn.spawnEntity(new EntityKnife(worldIn, playerIn));
+		if(!worldIn.isRemote) {
+			EntityKnife entity = new EntityKnife(worldIn, playerIn);
+			entity.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+			worldIn.spawnEntity(entity);
+		}
 		
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
 	}
